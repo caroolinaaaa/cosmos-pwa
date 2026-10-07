@@ -1,0 +1,97 @@
+:root{
+  --bg:#12102e; --bg2:#1d1a47; --ink:#ebe8ff; --muted:#a9a4d6;
+  --violet:#8b7bff; --peach:#ffb089; --mint:#7fe3c8;
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{
+  background:var(--bg);color:var(--ink);line-height:1.65;
+  font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+h1,h2{font-family:Georgia,"Times New Roman",serif;line-height:1.2;font-weight:700}
+h1{font-size:clamp(2rem,6vw,3.6rem)}
+h2{font-size:clamp(1.5rem,4vw,2.2rem);margin-bottom:.8rem}
+p{margin-bottom:1rem;max-width:62ch;color:var(--muted)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--peach);outline-offset:3px}
+
+.nav{
+  position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+  padding:.8rem 1.2rem;padding-top:calc(.8rem + env(safe-area-inset-top));
+  background:rgba(18,16,46,.88);backdrop-filter:blur(8px);
+}
+.logo{font-family:Georgia,serif;font-size:1.4rem;font-weight:700;text-decoration:none;color:var(--peach)}
+.nav nav{display:flex;gap:1.3rem}
+.nav nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav nav a:hover{color:var(--ink)}
+.burger{display:none;background:none;border:0;color:var(--ink);font-size:1.6rem;cursor:pointer}
+
+.hero{position:relative;min-height:88vh;display:grid;place-items:center;text-align:center;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 120%,#3a2f86 0%,var(--bg) 65%)}
+#stars{position:absolute;inset:0;width:100%;height:100%}
+.hero-text{position:relative;padding:2rem 1.2rem}
+.hero-text p{margin:1.2rem auto 1.8rem;font-size:1.1rem}
+.btn{
+  display:inline-block;background:var(--peach);color:#2a1a3a;border:0;border-radius:999px;
+  padding:.75rem 1.6rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;
+  transition:transform .15s,background .2s;
+}
+.btn:hover{transform:translateY(-2px);background:#ffc2a2}
+.btn.ghost{background:transparent;color:var(--ink);border:2px solid var(--violet)}
+
+.wrap{max-width:1000px;margin:0 auto;padding:4.5rem 1.4rem}
+.band{background:var(--bg2)}
+.split{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:center}
+.split.flip{grid-template-columns:1fr 1.2fr}
+.center{text-align:center}
+.center p{margin-inline:auto}
+.lead{margin-bottom:1.8rem}
+
+.galaxy{
+  aspect-ratio:1;border-radius:50%;max-width:340px;width:100%;margin:auto;
+  background:
+    radial-gradient(circle,#fff6d6 0 4%,#ffcf8a 9%,transparent 38%),
+    conic-gradient(from 0deg,transparent,#8b7bff88,transparent 25%,#7fe3c888 50%,transparent 75%,#8b7bff88,transparent);
+  filter:blur(1.2px);animation:spin 70s linear infinite;
+  box-shadow:0 0 90px #6a56d655;
+}
+.galaxy.small{max-width:280px;transform:rotate(-18deg);animation-direction:reverse}
+@keyframes spin{to{rotate:360deg}}
+
+.planets{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.planet{
+  background:none;border:0;color:var(--ink);font:inherit;cursor:pointer;text-align:center;width:92px;
+}
+.planet i{
+  display:block;width:64px;height:64px;border-radius:50%;margin:0 auto .4rem;
+  box-shadow:inset -10px -8px 16px #0006;transition:transform .2s;
+}
+.planet:hover i,.planet[aria-pressed="true"] i{transform:scale(1.18)}
+.planet[aria-pressed="true"]{color:var(--peach)}
+.planet-info{
+  background:var(--bg2);border-left:5px solid var(--violet);border-radius:var(--r);
+  padding:1.1rem 1.3rem;color:var(--ink);min-height:4.5rem;
+}
+
+video{width:100%;border-radius:var(--r);background:#000;aspect-ratio:16/9}
+.note{font-size:.9rem;margin-top:.8rem}
+code{background:#0004;padding:.1rem .4rem;border-radius:6px}
+.fact{font-size:1.2rem;color:var(--ink);min-height:4rem;margin-bottom:1.4rem}
+
+footer{text-align:center;padding:2.5rem 1rem;padding-bottom:calc(2.5rem + env(safe-area-inset-bottom));background:#0c0a22}
+footer p{margin:0 auto 1rem}
+
+@media(max-width:760px){
+  .burger{display:block}
+  .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg)}
+  .nav nav.open{display:flex}
+  .nav nav a{padding:1rem 1.4rem;border-top:1px solid #ffffff14}
+  .split,.split.flip{grid-template-columns:1fr}
+  .split.flip .galaxy{order:2}
+  .wrap{padding:3rem 1.2rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

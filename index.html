@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cosmos · un paseo por el universo</title>
+  <meta name="description" content="Galaxias, la Vía Láctea y los planetas, explicados sin complicaciones.">
+  <meta name="theme-color" content="#12102e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#inicio">Cosmos</a>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav id="menu">
+      <a href="#galaxias">Galaxias</a>
+      <a href="#via-lactea">Vía Láctea</a>
+      <a href="#planetas">Planetas</a>
+      <a href="#video">Video</a>
+      <a href="#dato">Dato curioso</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <canvas id="stars" aria-hidden="true"></canvas>
+      <div class="hero-text">
+        <h1>El universo es enorme.<br>Empecemos por lo cercano.</h1>
+        <p>Un paseo corto por galaxias, estrellas y planetas, sin tecnicismos y sin marearte.</p>
+        <a class="btn" href="#galaxias">Empezar el viaje</a>
+      </div>
+    </section>
+
+    <section id="galaxias" class="wrap split">
+      <div>
+        <h2>Galaxias: ciudades de estrellas</h2>
+        <p>Una galaxia es un montón de estrellas, gas y polvo unidos por la gravedad. Algunas tienen forma de espiral, otras parecen una bola alargada y otras no tienen forma definida.</p>
+        <p>Se calcula que en el universo observable hay cientos de miles de millones de galaxias. Y cada una puede tener miles de millones de estrellas.</p>
+      </div>
+      <div class="galaxy" role="img" aria-label="Dibujo de una galaxia espiral"></div>
+    </section>
+
+    <section id="via-lactea" class="band">
+      <div class="wrap split flip">
+        <div class="galaxy small" role="img" aria-label="Dibujo de la Vía Láctea"></div>
+        <div>
+          <h2>La Vía Láctea es nuestro barrio</h2>
+          <p>Vivimos en una galaxia espiral con una barra en el centro. El Sol está en uno de sus brazos, a unos dos tercios del centro, y tarda más de 200 millones de años en darle una vuelta completa.</p>
+          <p>Si tienes cielo oscuro, la ves como una franja nubosa de luz. Esa franja son millones de estrellas lejanas juntas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="planetas" class="wrap">
+      <h2>Los vecinos del Sol</h2>
+      <p class="lead">Toca un planeta para ver su dato.</p>
+      <div class="planets" id="planet-list"></div>
+      <p class="planet-info" id="planet-info" aria-live="polite">Aquí aparecerá lo que descubras.</p>
+    </section>
+
+    <section id="video" class="band">
+      <div class="wrap">
+        <h2>Míralo en movimiento</h2>
+        <video controls preload="none" poster="assets/icons/icon-512.png">
+          <source src="assets/video/UniversoObservable.mp4" type="video/mp4">
+          Tu navegador no puede reproducir este video.
+        </video>
+      </div>
+    </section>
+
+    <section id="dato" class="wrap center">
+      <h2>¿Sabías que...?</h2>
+      <p class="fact" id="fact" aria-live="polite">Pulsa el botón para un dato al azar.</p>
+      <button class="btn" id="fact-btn">Otro dato</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con curiosidad · Funciona sin conexión</p>
+    <button class="btn ghost" id="install" hidden>Instalar app</button>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

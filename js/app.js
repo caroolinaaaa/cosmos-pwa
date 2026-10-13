@@ -89,6 +89,27 @@ document.getElementById('fact-btn').addEventListener('click', () => {
   factEl.textContent = facts[i];
 });
 
+// ---------- Calculadora de emprendimiento ----------
+const peso = n => n.toLocaleString('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 });
+const val = id => Math.max(0, parseFloat(document.getElementById(id).value) || 0);
+function calcular() {
+  const personas = val('c-personas') * val('c-talleres');
+  const ingresos = val('c-precio') * personas;
+  const ganancia = ingresos - val('c-costo') * personas - val('c-fijos');
+  document.getElementById('o-ingresos').textContent = peso(ingresos);
+  const g = document.getElementById('o-ganancia');
+  g.textContent = peso(ganancia);
+  g.classList.toggle('neg', ganancia < 0);
+  const margen = val('c-precio') - val('c-costo');
+  document.getElementById('o-msg').textContent = ganancia >= 0
+    ? '¡El negocio sí deja ganancia este mes!'
+    : margen > 0
+      ? `Con estos números pierdes dinero. Necesitas atender al menos ${Math.ceil(val('c-fijos') / margen)} personas al mes para no perder.`
+      : 'Cada persona te cuesta más de lo que paga. Sube el precio o baja el costo.';
+}
+document.getElementById('calc').addEventListener('input', calcular);
+calcular();
+
 // ---------- PWA: service worker e instalación ----------
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));

@@ -83,6 +83,20 @@ code{background:#0004;padding:.1rem .4rem;border-radius:6px}
 footer{text-align:center;padding:2.5rem 1rem;padding-bottom:calc(2.5rem + env(safe-area-inset-bottom));background:#0c0a22}
 footer p{margin:0 auto 1rem}
 
+/* Emprendimiento */
+.biz-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:1.5rem 0 2.5rem}
+.biz{background:var(--bg);border-radius:var(--r);padding:1.1rem 1.2rem;border-top:4px solid var(--mint)}
+.biz h3{margin-bottom:.4rem;color:var(--ink);font-size:1.1rem}
+.biz p{margin:0;font-size:.95rem}
+.calc-title{font-family:Georgia,serif;font-size:1.5rem;margin-bottom:.4rem}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1rem 0 1.4rem}
+.calc label{display:flex;flex-direction:column;gap:.35rem;color:var(--muted);font-size:.9rem}
+.calc input{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--violet);border-radius:12px;padding:.55rem .8rem}
+.calc-out{background:var(--bg);border-left:5px solid var(--peach);border-radius:var(--r);padding:1.1rem 1.3rem}
+.calc-out p{margin:0 0 .4rem;color:var(--ink);max-width:none}
+.calc-out strong{color:var(--mint);font-size:1.2rem}
+.calc-out strong.neg{color:var(--peach)}
+
 @media(max-width:760px){
   .burger{display:block}
   .nav nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--bg)}

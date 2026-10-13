@@ -20,6 +20,7 @@
       <a href="#via-lactea">Vía Láctea</a>
       <a href="#planetas">Planetas</a>
       <a href="#video">Video</a>
+      <a href="#emprendimiento">Emprendimiento</a>
       <a href="#dato">Dato curioso</a>
     </nav>
   </header>
@@ -68,6 +69,33 @@
           <source src="assets/video/UniversoObservable.mp4" type="video/mp4">
           Tu navegador no puede reproducir este video.
         </video>
+      </div>
+    </section>
+
+    <section id="emprendimiento" class="band">
+      <div class="wrap">
+        <h2>Emprendimiento: Noches Cosmos</h2>
+        <p class="lead">Nuestra idea de negocio: talleres para ver el cielo y aprender astronomía, para escuelas y familias, con un kit de planetas y esta app como guía.</p>
+        <div class="biz-grid">
+          <article class="biz"><h3>🎯 Problema</h3><p>A muchos niños y jóvenes les parece aburrida la astronomía porque solo la ven en libros.</p></article>
+          <article class="biz"><h3>💡 Solución</h3><p>Un taller práctico con kit, telescopio sencillo y la app Cosmos para explicar todo paso a paso.</p></article>
+          <article class="biz"><h3>👥 Clientes</h3><p>Escuelas, familias y grupos scout que quieren una actividad diferente.</p></article>
+          <article class="biz"><h3>💰 Cómo ganamos</h3><p>Cobramos por persona en cada taller y vendemos el kit de planetas.</p></article>
+        </div>
+        <h3 class="calc-title">Calcula tu ganancia</h3>
+        <p>Cambia los números y mira cuánto ganaría el negocio en un mes.</p>
+        <form class="calc" id="calc" onsubmit="return false">
+          <label>Precio por persona ($)<input type="number" id="c-precio" value="120" min="0"></label>
+          <label>Costo por persona ($)<input type="number" id="c-costo" value="45" min="0"></label>
+          <label>Personas por taller<input type="number" id="c-personas" value="15" min="0"></label>
+          <label>Talleres al mes<input type="number" id="c-talleres" value="4" min="0"></label>
+          <label>Gastos fijos al mes ($)<input type="number" id="c-fijos" value="1500" min="0"></label>
+        </form>
+        <div class="calc-out" aria-live="polite">
+          <p>Ingresos del mes: <strong id="o-ingresos"></strong></p>
+          <p>Ganancia del mes: <strong id="o-ganancia"></strong></p>
+          <p id="o-msg"></p>
+        </div>
       </div>
     </section>
 
